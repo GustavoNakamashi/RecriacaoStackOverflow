@@ -7,16 +7,20 @@
     <title>CadUsuario</title>
 
     <link rel="stylesheet" href="../css/styleCadUsuario.css">
-    
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 
 </head>
 <body>
 
-    <section class="tela-cadastro ">
-        <div>
+    <section id="centralizando-tela-cadastro">
+        <div class="tela-cadastro">
+            
+            <img src=../img/logo.png>
             <h2> Participe do StackOverflow <h2>
             
-            <p>Ao clicar em "Cadastrar-se",</p>
+            <p style="font-size: 12px; font-family: Inter, sans-serif; font-weight: normal; color: #333; max-width: 440px;">
+            Ao clicar em "Cadastrar-se", você concorda com nossos termos de serviço e confirma que leu nossa política de privacidade .
+            </p>
 
             <form>
 
@@ -31,7 +35,7 @@
 
                 <button>Cadastrar-se</button><br>
 
-                <p>Já tem uma conta? Iniciar sessão</p>
+                <p id="frase-final">Já tem uma conta? <a href="#" style=" text-decoration: none;"> <span style="color: blue;"> Iniciar sessão </span> </a></p>
 
             </form>
         </div>    

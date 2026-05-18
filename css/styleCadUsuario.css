@@ -5,7 +5,34 @@ body {
 .tela-cadastro {
     background-color: aqua;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    height: 450px;
+    width: 700px;
+}
+
+#centralizando-tela-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tela-cadastro img {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+#frase-final {
+    font-size: 12px;
+    font-family: inter;
+    font-weight: normal;
+}
+
+label {
+    font-size: 15px;
+    font-family: inter;
 }
