@@ -1,0 +1,11 @@
+body {
+    background-color: lightgray;
+}
+
+.tela-cadastro {
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
