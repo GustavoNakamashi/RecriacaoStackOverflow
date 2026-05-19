@@ -2,21 +2,29 @@ body {
     background-color: lightgray;
 }
 
-.tela-cadastro {
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 450px;
-    width: 700px;
-}
-
 #centralizando-tela-cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.tela-cadastro {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 80px;
+    height: 450px;
+    width: 400px;
+}
+
+.header-cadastro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
 .tela-cadastro img {
@@ -26,13 +34,28 @@ body {
     flex-direction: row;
 }
 
-#frase-final {
-    font-size: 12px;
-    font-family: inter;
-    font-weight: normal;
+.conteudo-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 label {
     font-size: 15px;
     font-family: inter;
+}
+
+button {
+    padding: 7px;
+    width: 200px;
+}
+
+input {
+    width: 370px;
+}
+
+#frase-final {
+    font-size: 12px;
+    font-family: inter;
+    font-weight: normal;
 }
