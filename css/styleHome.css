@@ -36,3 +36,38 @@ li a:hover:not(.active) {
   background-color: red;
   color:white;
 }
+
+.area-msg {
+  background: rgb(255, 255, 255);
+  border-top: 1px solid rgb(255, 255, 255);
+  padding: 0.9rem 1rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.empacotador { /* envolve o input para efeito arrdondada */
+  flex: 1;
+  background: #f1f5f9;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 4px 6px 4px 18px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.send-btn { /* Botão de envio*/
+  background: rgba(84, 158, 255, 0.801);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
