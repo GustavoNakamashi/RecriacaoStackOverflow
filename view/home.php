@@ -28,7 +28,7 @@
                 <input type="text" id="messageInput" placeholder="Inicie um bate-papo com o Assistente de IA ">
             </div>
             <button class="send-btn" id="send-btn">
-                <i class="enviar"></i>
+                <i class="fas fa-arrow-up"></i>
             </button>
         </div>
     </div>
