@@ -1,5 +1,6 @@
 body {
-    background-color: lightgray;
+    background-color: rgb(211, 211, 211);
+    margin: 0;
 }
 
 #centralizando-tela-cadastro {
@@ -7,23 +8,27 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
 }
 
 .tela-cadastro {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 0 80px;
+    padding: 0 23px;
     height: 450px;
-    width: 400px;
+    border-radius: 8px;
+
+    position: relative;
 }
 
 .header-cadastro {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 4px;
 
 }
 
@@ -40,19 +45,48 @@ body {
     align-items: flex-start;
 }
 
+input {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+}
+
 label {
     font-size: 15px;
     font-family: inter;
 }
 
 button {
+    font-family: inter;
     padding: 7px;
-    width: 200px;
+    width: 380px;
+    background-color: rgb(27, 116, 208);
+    color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 4px;
 }
 
 input {
     width: 370px;
 }
+
+#botao-fechar {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding: 3px;
+    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    
+
+}
+
+#botao-fechar:hover {
+    background-color: red;
+}
+
+
 
 #frase-final {
     font-size: 12px;

@@ -14,6 +14,7 @@
 
     <section id="centralizando-tela-cadastro">
         <div class="tela-cadastro">
+            <span id="botao-fechar">&times;</span> <!--representação do X-->
 
             <div class="header-cadastro">
                 <img src=../img/logo.png>
@@ -25,19 +26,19 @@
             <div class="conteudo-cadastro">
 
                 <p style="font-size: 12px; font-family: Inter, sans-serif; font-weight: normal; color: #333; max-width: 440px;">
-                Ao clicar em "Cadastrar-se", você concorda com nossos termos de serviço e confirma que leu nossa política de privacidade .
+                Ao clicar em "Cadastrar-se", você concorda com nossos <span style="color: rgb(132, 174, 205);">termos de serviço</span> e confirma que leu nossa <span style="color: rgb(132, 174, 205);">política de privacidade</span> .
                 </p>
 
                 <form>
 
                     <label>Nome</label><br>
-                    <input type="text" placeholder="Nome" name="inputNome"><br>
+                    <input type="text" placeholder="Exemplo: João" name="inputNome"><br>
                 
                     <label>Email</label><br>
-                    <input type="text" placeholder="Email" name="inputEmail"><br>
+                    <input type="text" placeholder="exemplo@gmail.com" name="inputEmail"><br>
 
                     <label>Senha</label><br>
-                    <input type="password" placeholder="Senha" name="inputSenha"><br>
+                    <input type="password" placeholder="8+ caracteres (pelo menos uma letra e um número" name="inputSenha"><br>
 
                     <button>Cadastrar-se</button><br>
 
