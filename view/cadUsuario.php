@@ -38,7 +38,7 @@
                     <input type="text" placeholder="exemplo@gmail.com" name="inputEmail"><br>
 
                     <label>Senha</label><br>
-                    <input type="password" placeholder="8+ caracteres (pelo menos uma letra e um número" name="inputSenha"><br>
+                    <input type="password" placeholder="8+ caracteres (pelo menos uma letra e um número)" name="inputSenha"><br>
 
                     <button>Cadastrar-se</button><br>
 
