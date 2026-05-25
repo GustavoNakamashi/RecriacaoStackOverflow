@@ -1,0 +1,74 @@
+body{
+    margin:  0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #333;
+    position: fixed;
+    height: 100vh;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #4CAF50;
+    color:white;
+}
+
+li a:hover:not(.active) {
+    background-color: red;
+    color:white;
+}
+
+.corpo-principal {
+    text-align: justify;
+    background: lightgray;
+    height: 100vh;
+    margin-left: 15%; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.foto-perfil {
+    height: 150px;
+    width: 150px;
+}
+
+#deixar-flexivel {
+    display: flex;
+    gap: 20px
+}
+
+
+/*Botões*/
+button {
+    border-radius: 70px;
+    border: 0px;
+    gap: 20px;
+    padding: 5.5px;
+    font-family: inter;
+}
+
+button:hover:not(.active) {
+    background-color: rgb(227, 230, 232);
+    color: rgb(0, 0, 0);
+}
+
+button:active {
+    background-color: rgb(231, 112, 13);
+    color: rgb(255, 255, 255);
+    
+}
+
+

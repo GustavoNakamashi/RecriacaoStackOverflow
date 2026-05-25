@@ -1,15 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Usuário</title>
 
-</head>
-<body>
+    <link rel="stylesheet" href="../css/perfilUsuario.css">
 
-    <p>Ola</p>
-    
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+
+
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#Quest">Questões</a></li>
+        <li><a href="#Tags">Etiquetas</a></li>
+        <li><a href="#desaf">Desafios</a></li>
+        <li><a href="#Artigos">Artigos</a></li>
+    </ul>
+
+    <section class="corpo-principal">
+        <div id="deixar-flexivel">
+            <img src="../img/logo.png" alt="Foto de perfil" class="foto-perfil">
+            <h1> Nome </h1>
+        </div>
+
+        <div>
+            <a href="PerfilUsuario.php?pagina=perguntas">
+                <button type="button">Suas perguntas</button>
+            </a>
+            
+            <a href="PerfilUsuario.php?pagina=dashboard">
+                <button type="button">Dashboard</button>
+            </a>
+
+            <a href="PerfilUsuario.php?pagina=perfil">
+                <button type="button">Editar Perfil</button>
+            </a>
+
+        </div>    
+
+        <div class="conteudo-dinamico">
+            <?php 
+            include '../processamento/controlaAbas.php'; 
+            ?>
+        </div>
+
+        
+
+    </section>
+
+
 </body>
 </html>
