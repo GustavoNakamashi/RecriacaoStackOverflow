@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<link rel="stylesheet" href="../css/sub_perfil.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título da Página</title>
+<form>
 
-</head>
-<body>
+    <label>Nome</label><br>
+    <input type="text" placeholder="Nome" name="inputNome"><br>
 
-    <h1>Salve</h1>
-    <p>Este é o conteúdo principal do meu site.</p>
+    <label>Sobrenome</label><br>
+    <input type="text" placeholder="Sobrenome" name="inputSobrenome"><br>
 
-</body>
-</html>
+    <label>CEP</label><br>
+    <input type="text" placeholder="Sobrenome" name="inputSobrenome">
+
+</form>

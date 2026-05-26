@@ -1,0 +1,61 @@
+.cards {
+    background-color: rgb(255, 255, 255);
+    width: 260px;
+    height: 140px;
+    font-family: inter;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 1.0);
+}
+
+.secao-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.espacamento-palavras {
+    position: absolute;
+    margin: 20px;
+    margin-top: 0px;
+}
+
+.dashboard-layout-global {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+.coluna-esquerda {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.caixa-grafico-individual {
+    width: 100%;
+    height: 260px;
+    position: relative;
+}
+
+/* Coluna isolada na direita para o gráfico de Rosca */
+.coluna-direita {
+    width: 24%; /* Largura menor para o gráfico redondo */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

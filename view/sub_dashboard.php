@@ -1,28 +1,54 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+    <link rel="stylesheet" href="../css/sub_dashboard.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título da Página</title>
+    <section class="secao-cards">
+        <div class="cards"  style="background-color: rgb(24, 67, 100);">
+            <div class="espacamento-palavras">
+                <h3 style="color: rgb(255, 255, 255);">Reputação</h3>
+            </div>
+        </div>
 
-</head>
-<body>
+        <div class="cards">
+            <div class="espacamento-palavras">
+                <h3>Perguntas feitas</h3>
+            </div>
+        </div>
 
-    <div style="width: 30%; margin: 0;">
-        <canvas id="graficoReputacao"></canvas>
+        <div class="cards">
+            <div class="espacamento-palavras">
+                <h3>Respostas Úteis</h3>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="espacamento-palavras">
+                <h3>Seguidores</h3>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="dashboard-layout-global">
+
+    <div class="coluna-esquerda">
+        
+        <div class="caixa-grafico-individual">
+            <canvas id="graficoReputacao"></canvas>
+        </div>
+
+        <div class="caixa-grafico-individual" style="margin-top: 30px;">
+            <canvas id="graficoBarrasTags"></canvas>
+        </div>
+
     </div>
 
-    <div style="width: 30%; margin: 0;">
-        <canvas id="graficoAtividade"></canvas>
+    <div class="coluna-direita">
+        <div class="caixa-grafico-rosca-fixo">
+            <canvas id="graficoAtividade"></canvas>
+        </div>
     </div>
-    <div style="width: 30%; margin: 0;">
-        <canvas id="graficoBarrasTags"></canvas>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</div>
 
-    <script src="../processamento/dashboard.js"></script>
-
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../processamento/dashboard.js"></script>
