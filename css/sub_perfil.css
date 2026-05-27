@@ -1,0 +1,28 @@
+input {
+    display: block;
+    width: 100%;       /* Tenta ocupar todo o espaço disponível... */
+    max-width: 550px;  /* 👈 ...mas trava exatamente em 550px de largura */
+    margin-bottom: 20px;
+    padding: 12px;     /* Aumentar um pouquinho o preenchimento interno deixa o visual mais imponente */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Cantos menos arredondados combinam mais com a estética clássica */
+    box-sizing: border-box;
+}
+
+.layout-duas-colunas {
+    display: flex; /* Coloca os elementos filhos um ao lado do outro */
+    justify-content: space-between; /* Empurra uma coluna para cada lado */
+    gap: 40px; /* Cria um "corredor" de respiro entre a esquerda e a direita */
+}
+
+/* Faz com que ambas as colunas tenham o mesmo tamanho */
+.coluna {
+    flex: 1; /* As colunas dividem o espaço disponível igualmente (50/50) */
+}
+
+.botao-salvar{
+    border-radius: 0px;
+    width: 100px;
+    background-color: rgb(89, 146, 226);
+    color: rgb(255, 255, 255);
+}
