@@ -2,15 +2,15 @@
 require_once __DIR__ . '/../processamento/conexao.php';
 session_start();
 
-$action = $_POST['action'] ?? 'listar';
+$action = $_GET['action'] ?? 'listar';
 $usuario_logado = isset($_SESSION['usuario_id']);
-$id = (int)($_POST['id'] ?? 0);
+$id = (int)($_GET['id'] ?? 0);
 
 // LISTAR PERGUNTAS
 if ($action == 'listar') {
-    $busca = $_POST['busca'] ?? '';
-    $tag = $_POST['tag'] ?? '';
-    $ordenar = $_POST['ordenar'] ?? 'recentes';
+    $busca = $_GET['busca'] ?? '';
+    $tag = $_GET['tag'] ?? '';
+    $ordenar = $_GET['ordenar'] ?? 'recentes';
 
     $sql = "SELECT p.*, u.nome as autor,
             (SELECT COUNT(*) FROM respostas WHERE pergunta_id = p.id) as total_respostas
@@ -44,7 +44,7 @@ if ($action == 'listar') {
         <meta charset="UTF-8">
         <title>Perguntas - StackOverflow Fatec</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/stylePerguntas.css">
     </head>
     <body>
     <nav class="navbar">
@@ -69,7 +69,7 @@ if ($action == 'listar') {
         <h1>Todas as Perguntas</h1>
         <a href="?action=nova" class="btn btn-primary">Nova Pergunta</a>
         <div class="filtros">
-            <form method="POST$_POST" class="filtros-form">
+            <form method="GET" class="filtros-form">
                 <input type="hidden" name="action" value="listar">
                 <input type="text" name="busca" placeholder="Buscar..." value="<?= htmlspecialchars($busca) ?>">
                 <select name="tag">
@@ -103,7 +103,8 @@ if ($action == 'listar') {
     </body>
     </html>
     <?php
-}
+} // FIM DO listar
+
 // NOVA PERGUNTA
 elseif ($action == 'nova') {
     if (!$usuario_logado) {
@@ -126,24 +127,13 @@ elseif ($action == 'nova') {
         <h1>Fazer Pergunta</h1>
         <div class="form-pergunta">
             <form method="POST" action="../processamento/salvar_pergunta.php">
-                <div class="form-group">
-                    <label class="form-label">Título</label>
-                    <input type="text" name="titulo" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Conteúdo</label>
-                    <textarea name="conteudo" class="form-control" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Tags</label>
-                    <div class="tags-select">
-                        <?php foreach ($tags as $t): ?>
-                            <label class="tag-checkbox">
-                                <input type="checkbox" name="tags[]" value="<?= $t['id'] ?>"> <?= $t['nome'] ?>
-                            </label>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
+                <div class="form-group"><label class="form-label">Título</label><input type="text" name="titulo" class="form-control" required></div>
+                <div class="form-group"><label class="form-label">Conteúdo</label><textarea name="conteudo" class="form-control" required></textarea></div>
+                <div class="form-group"><label class="form-label">Tags</label><div class="tags-select">
+                    <?php foreach ($tags as $t): ?>
+                        <label class="tag-checkbox"><input type="checkbox" name="tags[]" value="<?= $t['id'] ?>"> <?= $t['nome'] ?></label>
+                    <?php endforeach; ?>
+                </div></div>
                 <button type="submit" class="btn btn-primary">Publicar</button>
                 <a href="perguntas.php" class="btn btn-secondary">Cancelar</a>
             </form>
@@ -153,7 +143,8 @@ elseif ($action == 'nova') {
     </body>
     </html>
     <?php
-}
+} // FIM DO nova
+
 // VER PERGUNTA (com respostas)
 elseif ($action == 'ver' && $id) {
     // Incrementar visualizações
@@ -185,18 +176,9 @@ elseif ($action == 'ver' && $id) {
     <div class="container">
         <div class="card">
             <h1><?= htmlspecialchars($pergunta['titulo']) ?></h1>
-            <div class="pergunta-meta">
-                Por <?= htmlspecialchars($pergunta['autor']) ?> | 
-                <?= $pergunta['visualizacoes'] ?> visualizações
-            </div>
-            <div class="tags">
-                <?php foreach ($tags as $t): ?>
-                    <span class="tag"><?= $t['nome'] ?></span>
-                <?php endforeach; ?>
-            </div>
-            <div class="pergunta-conteudo">
-                <?= nl2br(htmlspecialchars($pergunta['conteudo'])) ?>
-            </div>
+            <div class="pergunta-meta">Por <?= htmlspecialchars($pergunta['autor']) ?> | <?= $pergunta['visualizacoes'] ?> visualizações</div>
+            <div class="tags"><?php foreach ($tags as $t): ?><span class="tag"><?= $t['nome'] ?></span><?php endforeach; ?></div>
+            <div class="pergunta-conteudo"><?= nl2br(htmlspecialchars($pergunta['conteudo'])) ?></div>
             <?php if ($usuario_logado && $_SESSION['usuario_id'] == $pergunta['usuario_id']): ?>
                 <div style="margin-top:20px">
                     <a href="?action=editar&id=<?= $id ?>" class="btn btn-secondary">Editar</a>
@@ -204,20 +186,14 @@ elseif ($action == 'ver' && $id) {
                 </div>
             <?php endif; ?>
         </div>
-
         <h2>Respostas</h2>
         <?php foreach ($respostas as $r): ?>
             <div class="resposta <?= $r['is_ia'] ? 'resposta-ia' : '' ?>">
-                <?php if ($r['is_ia']): ?>
-                    <div class="badge-ia">Resposta da IA</div>
-                <?php else: ?>
-                    <strong><?= htmlspecialchars($r['autor'] ?? 'Usuário') ?></strong>
-                <?php endif; ?>
+                <?php if ($r['is_ia']): ?><div class="badge-ia">Resposta da IA</div><?php else: ?><strong><?= htmlspecialchars($r['autor'] ?? 'Usuário') ?></strong><?php endif; ?>
                 <div><?= nl2br(htmlspecialchars($r['conteudo'])) ?></div>
                 <div class="pergunta-meta"><?= date('d/m/Y H:i', strtotime($r['data_criacao'])) ?></div>
             </div>
         <?php endforeach; ?>
-
         <?php if ($usuario_logado): ?>
             <div class="form-resposta">
                 <h3>Sua Resposta</h3>
@@ -235,7 +211,8 @@ elseif ($action == 'ver' && $id) {
     </body>
     </html>
     <?php
-}
+} // FIM DO ver
+
 // EDITAR PERGUNTA
 elseif ($action == 'editar' && $id) {
     if (!$usuario_logado) {
@@ -263,31 +240,19 @@ elseif ($action == 'editar' && $id) {
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
-    <nav class="navbar"><!-- mesma navbar --></nav>
+    <nav class="navbar"><!-- navbar --></nav>
     <div class="container">
         <h1>Editar Pergunta</h1>
         <div class="form-pergunta">
             <form method="POST" action="../processamento/editar_pergunta.php">
                 <input type="hidden" name="pergunta_id" value="<?= $id ?>">
-                <div class="form-group">
-                    <label class="form-label">Título</label>
-                    <input type="text" name="titulo" value="<?= htmlspecialchars($pergunta['titulo']) ?>" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Conteúdo</label>
-                    <textarea name="conteudo" class="form-control" required><?= htmlspecialchars($pergunta['conteudo']) ?></textarea>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Tags</label>
-                    <div class="tags-select">
-                        <?php foreach ($tagsDisponiveis as $t): ?>
-                            <label class="tag-checkbox">
-                                <input type="checkbox" name="tags[]" value="<?= $t['id'] ?>" <?= in_array($t['id'], $tagsSelecionadas) ? 'checked' : '' ?>>
-                                <?= $t['nome'] ?>
-                            </label>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
+                <div class="form-group"><label class="form-label">Título</label><input type="text" name="titulo" value="<?= htmlspecialchars($pergunta['titulo']) ?>" class="form-control" required></div>
+                <div class="form-group"><label class="form-label">Conteúdo</label><textarea name="conteudo" class="form-control" required><?= htmlspecialchars($pergunta['conteudo']) ?></textarea></div>
+                <div class="form-group"><label class="form-label">Tags</label><div class="tags-select">
+                    <?php foreach ($tagsDisponiveis as $t): ?>
+                        <label class="tag-checkbox"><input type="checkbox" name="tags[]" value="<?= $t['id'] ?>" <?= in_array($t['id'], $tagsSelecionadas) ? 'checked' : '' ?>><?= $t['nome'] ?></label>
+                    <?php endforeach; ?>
+                </div></div>
                 <button type="submit" class="btn btn-primary">Salvar</button>
                 <a href="?action=ver&id=<?= $id ?>" class="btn btn-secondary">Cancelar</a>
             </form>
@@ -297,10 +262,11 @@ elseif ($action == 'editar' && $id) {
     </body>
     </html>
     <?php
-}
+} // FIM DO editar
+
 // BUSCAR
 elseif ($action == 'buscar') {
-    $termo = $_POST['q'] ?? '';
+    $termo = $_GET['q'] ?? '';
     $resultados = [];
     if ($termo) {
         $stmt = $pdo->prepare("SELECT p.*, u.nome as autor FROM perguntas p JOIN usuarios u ON p.usuario_id = u.id WHERE p.titulo LIKE ? OR p.conteudo LIKE ? ORDER BY p.data_criacao DESC");
@@ -321,7 +287,7 @@ elseif ($action == 'buscar') {
     <div class="container">
         <h1>Buscar Perguntas</h1>
         <div class="filtros">
-            <form method="POST$_POST" class="filtros-form">
+            <form method="GET" class="filtros-form">
                 <input type="hidden" name="action" value="buscar">
                 <input type="text" name="q" placeholder="Digite sua busca..." value="<?= htmlspecialchars($termo) ?>">
                 <button type="submit" class="btn btn-primary">Buscar</button>
@@ -344,4 +310,11 @@ elseif ($action == 'buscar') {
     </body>
     </html>
     <?php
+} // FIM DO buscar
+
+// Se nenhuma ação corresponder, apenas mostra a listagem
+else {
+    header('Location: perguntas.php?action=listar');
+    exit;
 }
+?>

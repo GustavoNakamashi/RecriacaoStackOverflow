@@ -17,6 +17,7 @@
         <li><a href="#Tags">Etiquetas</a></li>
         <li><a href="#desaf">Desafios</a></li>
         <li><a href="#Artigos">Artigos</a></li>
+        <li><a href="../perguntas.php">Perguntas</a></li>
     </ul>
 
     <div>
