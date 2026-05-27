@@ -19,7 +19,7 @@
 
 <div class="conteudo-principal">
     <div class="container">
-        <h1>📋 Todas as Perguntas</h1>
+        <h1>Todas as Perguntas</h1>
         <p class="subtitulo">Explore as perguntas da comunidade e contribua com seu conhecimento!</p>
         
         <a href="nova_pergunta.php" class="btn-principal">+ Fazer Pergunta</a>
@@ -159,10 +159,10 @@
                     </div>
                     
                     <div class="pergunta-meta">
-                        <span>📊 <?php echo $pergunta['total_respostas']; ?> respostas</span>
-                        <span>👁️ <?php echo $pergunta['visualizacoes']; ?> visualizações</span>
-                        <span>👤 <?php echo htmlspecialchars($pergunta['autor_nome']); ?></span>
-                        <span>📅 <?php echo date('d/m/Y H:i', strtotime($pergunta['data_criacao'])); ?></span>
+                        <span> <?php echo $pergunta['total_respostas']; ?> respostas</span>
+                        <span> <?php echo $pergunta['visualizacoes']; ?> visualizações</span>
+                        <span> <?php echo htmlspecialchars($pergunta['autor_nome']); ?></span>
+                        <span> <?php echo date('d/m/Y H:i', strtotime($pergunta['data_criacao'])); ?></span>
                     </div>
                     
                     <!-- Tags da pergunta -->
@@ -189,11 +189,11 @@
                     <?php if($is_admin): ?>
                         <div class="acoes-pergunta">
                             <a href="editar_pergunta.php?id=<?php echo $pergunta['id']; ?>">
-                                <button class="btn-secundario">✏️ Editar</button>
+                                <button class="btn-secundario"> Editar</button>
                             </a>
                             <a href="../processamento/deletar_pergunta.php?id=<?php echo $pergunta['id']; ?>" 
                                onclick="return confirm('Tem certeza que deseja deletar esta pergunta?')">
-                                <button class="btn-perigo">🗑️ Deletar</button>
+                                <button class="btn-perigo"> Deletar</button>
                             </a>
                         </div>
                     <?php endif; ?>
