@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../processamento/conexao.php';
+require_once __DIR__ . '/../config/conexao2.php';
 session_start();
 
 $action = $_GET['action'] ?? 'listar';
@@ -52,7 +52,6 @@ if ($action == 'listar') {
             <div class="nav-logo"><a href="home.php">StackOverflow Fatec</a></div>
             <div class="nav-links">
                 <a href="home.php">Início</a>
-                <a href="perguntas.php">Perguntas</a>
                 <a href="perguntas.php?action=nova">Perguntar</a>
                 <a href="desafio.php">Desafios</a>
                 <?php if ($usuario_logado): ?>
@@ -67,9 +66,9 @@ if ($action == 'listar') {
     </nav>
     <div class="container">
         <h1>Todas as Perguntas</h1>
-        <a href="?action=nova" class="btn btn-primary">Nova Pergunta</a>
+        <a href="nova_pergunta.php" class="btn btn-primary">Nova Pergunta</a>
         <div class="filtros">
-            <form method="GET" class="filtros-form">
+            <form method="POST" class="filtros-form">
                 <input type="hidden" name="action" value="listar">
                 <input type="text" name="busca" placeholder="Buscar..." value="<?= htmlspecialchars($busca) ?>">
                 <select name="tag">

@@ -15,9 +15,8 @@
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#Quest">Questões</a></li>
         <li><a href="#Tags">Etiquetas</a></li>
-        <li><a href="#desaf">Desafios</a></li>
-        <li><a href="#Artigos">Artigos</a></li>
-        <li><a href="../perguntas.php">Perguntas</a></li>
+        <li><a href="desafio.php">Desafios</a></li>
+        <li><a href="perguntas.php">Perguntas</a></li>
     </ul>
 
     <div>

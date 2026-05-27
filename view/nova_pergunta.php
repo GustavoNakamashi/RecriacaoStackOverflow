@@ -1,15 +1,12 @@
 <?php
-// nova_pergunta.php - Página para fazer uma nova pergunta
-require_once __DIR__ . '/../processamento/conexao.php';
+require_once __DIR__ . '/../config/conexao2.php';
 session_start();
 
-// Verifica se o usuário está logado
 if (!isset($_SESSION['usuario_id'])) {
     header('Location: login.php');
     exit;
 }
 
-// Busca todas as tags disponíveis
 $tags = $pdo->query("SELECT * FROM tags ORDER BY nome")->fetchAll();
 ?>
 <!DOCTYPE html>
@@ -44,7 +41,7 @@ $tags = $pdo->query("SELECT * FROM tags ORDER BY nome")->fetchAll();
         <h1>Faça sua pergunta</h1>
         <p class="subtitulo">Seja claro e específico para ajudar a comunidade a te ajudar melhor.</p>
 
-        <form method="POST" action="../processamento/salvar_pergunta.php">
+        <form method="POST" action="../processamento/salvar_perguntas.php">
             <div class="form-group">
                 <label class="form-label" for="titulo">Título</label>
                 <input type="text" id="titulo" name="titulo" class="form-control" 
