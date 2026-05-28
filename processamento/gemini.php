@@ -34,4 +34,4 @@ function chamarGemini($pergunta) {
     }
     return null;
 }
-?>
+?> 

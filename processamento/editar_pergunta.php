@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../config/conexao.php';
+require_once __DIR__ . '/../config/conexao2.php';
 
 if (!isset($_SESSION['usuario_id']) || empty($_POST['titulo']) || empty($_POST['conteudo'])) {
     header('Location: ../view/perguntas.php');
@@ -24,3 +24,4 @@ $pdo->commit();
 
 header("Location: ../view/perguntas.php?action=ver&id=$id");
 exit;
+?>

@@ -1,7 +1,11 @@
 <?php
 session_start();
 require_once __DIR__ . '/../config/conexao2.php';
-if ($_SESSION['usuario_id'] != 1) { header('Location: ../view/home.php'); exit; }
+
+if (!isset($_SESSION['usuario_id']) || $_SESSION['usuario_id'] != 1) {
+    header('Location: ../view/home.php');
+    exit;
+}
 
 if ($_POST['acao'] == 'criar') {
     $stmt = $pdo->prepare("INSERT INTO desafios (titulo, descricao, dificuldade) VALUES (?, ?, ?)");
@@ -11,3 +15,4 @@ if ($_POST['acao'] == 'criar') {
 }
 header('Location: ../view/desafio.php');
 exit;
+?>

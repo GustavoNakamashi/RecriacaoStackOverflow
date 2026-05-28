@@ -14,6 +14,7 @@ $resposta = chamarGemini($mensagem);
 if ($resposta) {
     echo json_encode(['resposta' => $resposta]);
 } else {
-    echo json_encode(['resposta' => 'Desculpe, não consegui processar sua pergunta. Tente novamente.']);
+    echo json_encode(['resposta' => 'Desculpe, nao consegui processar sua pergunta.']);
 }
 exit;
+?>
