@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $dbname = 'stackoverflow_fatec';
-$username = 'root';
+$username = '';
 $password = '';
 
 try {
