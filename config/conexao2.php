@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'stackoverflow_fatec';
-$username = '';
-$password = '';
+$username = 'root';
+$password = '123';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
