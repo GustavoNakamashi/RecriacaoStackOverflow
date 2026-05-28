@@ -17,9 +17,7 @@
     <ul>
         <li><a href="home.php">Home</a></li>
         <li><a href="perguntas.php">Questões</a></li>
-        <li><a href="#Tags">Etiquetas</a></li>
         <li><a href="desafio.php">Desafios</a></li>
-        <li><a href="#Artigos">Artigos</a></li>
         <li><a class="active" href="#perfilUsuario.php">Perfil</a></li>
     </ul>
 
@@ -30,7 +28,7 @@
         </div>
 
         <div>
-            <a href="PerfilUsuario.php?pagina=perguntas">
+            <a href="PerfilUsuario.php?pagina=perguntas.php">
                 <button type="button">Suas perguntas</button>
             </a>
             

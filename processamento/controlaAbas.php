@@ -16,7 +16,7 @@
             break;
             
         default:
-            include 'sub_perguntas.php';
+            include 'perguntas.php';
             break;
     }
     ?>
