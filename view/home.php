@@ -15,9 +15,9 @@ date_default_timezone_set('America/Sao_Paulo');
 <!-- MENU LATERAL -->
 <ul class="menu-lateral">
     <li><a class="active" href="home.php">Home</a></li>
-    <li><a href="perfilUsuario.php">Perfil</a></li>
-    <li><a href="desafio.php">Desafios</a></li>
-    <li><a href="perguntas.php">Perguntas</a></li>
+    <li><a href="../view/perfilUsuario.php">Perfil</a></li>
+    <li><a href="../view//desafio.php">Desafios</a></li>
+    <li><a href="../view/perguntas.php">Perguntas</a></li>
 </ul>
 
 <!-- CONTEUDO PRINCIPAL -->
