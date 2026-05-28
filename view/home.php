@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StackOverflow Fatec - IA Assistente</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styleHome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet"  href="..//css/styleHome.css">
+    
 </head>
 <body>
 
@@ -19,29 +20,28 @@
 
 <!-- CONTEÚDO PRINCIPAL -->
 <div class="main-content">
-    <div class="header-section">
-        <h1>Inteligência Artificial</h1>
+    <div class="chat-header">
+        <h1>Assistente de Programação IA</h1>
+        <p>Tire suas dúvidas sobre código, linguagens, frameworks e muito mais</p>
     </div>
 
     <div class="chat-container">
         <div class="chat-messages" id="chatMessages">
             <div class="message bot-message">
                 <div class="message-bubble">
-                    Olá! Eu sou o assistente de programação. Pergunte qualquer coisa sobre código, linguagens, frameworks ou desafios!
+                    Olá! Eu sou o assistente de programação. Pergunte qualquer coisa sobre código, linguagens, frameworks ou desafios de programação!
                 </div>
                 <div class="message-time"><?= date('H:i') ?></div>
             </div>
         </div>
 
-        <div class="loading" id="loading">
-            <span class="typing-dots">Digitando<span>.</span><span>.</span><span>.</span></span>
-        </div>
+        <div class="loading" id="loading">Digitando...</div>
 
         <div class="chat-input-area">
             <div class="input-wrapper">
                 <input type="text" id="messageInput" class="chat-input" placeholder="Digite sua pergunta aqui..." autocomplete="off">
                 <button class="send-btn" id="sendBtn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                         <line x1="22" y1="2" x2="11" y2="13"></line>
                         <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                     </svg>
@@ -117,11 +117,11 @@
             } else if (data.erro) {
                 addMessage('Erro: ' + data.erro, false);
             } else {
-                addMessage('Desculpe, não consegui processar sua pergunta. Tente novamente.', false);
+                addMessage('Desculpe, não consegui processar sua pergunta.', false);
             }
         } catch (error) {
             esconderLoading();
-            addMessage('Erro de conexao. Verifique se o servidor esta rodando.', false);
+            addMessage('Erro de conexão. Tente novamente.', false);
         }
     }
     
