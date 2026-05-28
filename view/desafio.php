@@ -59,7 +59,7 @@ foreach ($desafios as $d) {
     <li><a href="home.php">Home</a></li>
     <li><a href="perguntas.php">Perguntas</a></li>
     <li><a href="nova_pergunta.php">Nova Pergunta</a></li>
-    <li><a class="active" href="desafio.php">Desafios</a></li>
+    <li><a a class="active" href="desafio.php">Desafios</a></li>
     <?php if(isset($_SESSION['usuario_id'])): ?>
         <li><a href="perfil.php">Perfil</a></li>
         <li><a href="../processamento/logout.php">Sair</a></li>
