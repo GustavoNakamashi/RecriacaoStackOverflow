@@ -4,7 +4,7 @@
 
     switch ($aba) {
         case 'perguntas':
-            include 'sub_perguntas.php';
+            include 'perguntas.php';
             break;
             
         case 'dashboard':
