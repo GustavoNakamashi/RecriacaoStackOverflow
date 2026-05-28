@@ -64,8 +64,8 @@ foreach ($desafios as $d) {
         <li><a href="perfil.php">Perfil</a></li>
         <li><a href="../processamento/logout.php">Sair</a></li>
     <?php else: ?>
-        <li><a href="login.php">Entrar</a></li>
-        <li><a href="perfilUsuario.php">Cadastrar</a></li>
+        <li><a href="cadUsuario.php">Cadastrar</a></li>
+        <li><a href="perfilUsuario.php">Perfil</a></li>
     <?php endif; ?>
 </ul>
 

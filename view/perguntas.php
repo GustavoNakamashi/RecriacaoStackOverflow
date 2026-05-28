@@ -168,7 +168,7 @@ elseif ($action == 'ver' && $id) {
         <meta charset="UTF-8">
         <title><?= htmlspecialchars($pergunta['titulo']) ?></title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/stylePerguntas.css">
     </head>
     <body>
     <nav class="navbar"><div class="nav-container"><div class="nav-logo"><a href="home.php">StackOverflow Fatec</a></div><div class="nav-links"><a href="home.php">Início</a><a href="perguntas.php">Perguntas</a><a href="perguntas.php?action=nova">Perguntar</a><a href="desafio.php">Desafios</a><?php if ($usuario_logado): ?><a href="perfil.php"><?= $_SESSION['usuario_nome'] ?></a><a href="../processamento/logout.php">Sair</a><?php else: ?><a href="login.php">Entrar</a><a href="cadastro.php">Cadastrar</a><?php endif; ?></div></div></nav>
@@ -193,18 +193,24 @@ elseif ($action == 'ver' && $id) {
                 <div class="pergunta-meta"><?= date('d/m/Y H:i', strtotime($r['data_criacao'])) ?></div>
             </div>
         <?php endforeach; ?>
-        <?php if ($usuario_logado): ?>
-            <div class="form-resposta">
-                <h3>Sua Resposta</h3>
-                <form method="POST" action="../processamento/salvar_resposta.php">
-                    <input type="hidden" name="pergunta_id" value="<?= $id ?>">
-                    <textarea name="conteudo" class="form-control" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Responder</button>
-                </form>
-            </div>
-        <?php else: ?>
-            <div class="alert-info">Faça <a href="login.php">login</a> para responder</div>
-        <?php endif; ?>
+        <div class="form-resposta">
+            <h3>Deixe sua resposta</h3>
+            <form method="POST" action="../processamento/salvar_resposta.php">
+                <input type="hidden" name="pergunta_id" value="<?= $id ?>">
+                
+                <div class="form-group">
+                    <label class="form-label">Seu nome (opcional)</label>
+                    <input type="text" name="autor_nome" class="form-control" placeholder="Ex: João Silva (deixe em branco para Anônimo)">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Resposta</label>
+                    <textarea name="conteudo" class="form-control" rows="5" placeholder="Escreva sua resposta aqui..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Enviar Resposta</button>
+            </form>
+        </div>
     </div>
     <footer class="footer"><p>© 2025 StackOverflow Fatec</p></footer>
     </body>

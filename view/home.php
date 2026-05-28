@@ -13,7 +13,7 @@
 <body>
     <ul>
         <li><a class="active" href="#home.php">Home</a></li>
-        <li><a href="#Quest">Questões</a></li>
+        <li><a href="perguntas.php">Questões</a></li>
         <li><a href="#Tags">Etiquetas</a></li>
 
         <li><a href="desafio.php">Desafios</a></li>
