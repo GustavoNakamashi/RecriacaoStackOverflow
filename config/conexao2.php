@@ -1,8 +1,8 @@
 <?php
 // config/conexao2.php - Configuração do banco de dados
 
-$host = 'localhost';
-$dbname = 'stackoverflow_fatec';   // Nome do seu banco
+$host = '189.45.123.67';
+$dbname = 'stackoverflow_fatec';
 $username = 'root';
 $password = '';
 
