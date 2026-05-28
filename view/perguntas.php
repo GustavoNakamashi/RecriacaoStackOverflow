@@ -58,8 +58,7 @@ if ($action == 'listar') {
                     <a href="perfil.php"><?= htmlspecialchars($_SESSION['usuario_nome']) ?></a>
                     <a href="../processamento/logout.php">Sair</a>
                 <?php else: ?>
-                    <a href="login.php">Entrar</a>
-                    <a href="cadastro.php">Cadastrar</a>
+                    <a href="cadUsuario.php">Cadastrar</a>
                 <?php endif; ?>
             </div>
         </div>
@@ -171,7 +170,7 @@ elseif ($action == 'ver' && $id) {
         <link rel="stylesheet" href="../css/stylePerguntas.css">
     </head>
     <body>
-    <nav class="navbar"><div class="nav-container"><div class="nav-logo"><a href="home.php">StackOverflow Fatec</a></div><div class="nav-links"><a href="home.php">Início</a><a href="perguntas.php">Perguntas</a><a href="perguntas.php?action=nova">Perguntar</a><a href="desafio.php">Desafios</a><?php if ($usuario_logado): ?><a href="perfil.php"><?= $_SESSION['usuario_nome'] ?></a><a href="../processamento/logout.php">Sair</a><?php else: ?><a href="login.php">Entrar</a><a href="cadastro.php">Cadastrar</a><?php endif; ?></div></div></nav>
+    <nav class="navbar"><div class="nav-container"><div class="nav-logo"><a href="home.php">StackOverflow Fatec</a></div><div class="nav-links"><a href="home.php">Início</a><a href="perguntas.php">Perguntas</a><a href="perguntas.php?action=nova">Perguntar</a><a href="desafio.php">Desafios</a><?php if ($usuario_logado): ?><a href="perfil.php"><?= $_SESSION['usuario_nome'] ?></a><a href="../processamento/logout.php">Sair</a><?php else: ?><a href="login.php">Entrar</a><a href="cadUsuario.php">Cadastrar</a><?php endif; ?></div></div></nav>
     <div class="container">
         <div class="card">
             <h1><?= htmlspecialchars($pergunta['titulo']) ?></h1>

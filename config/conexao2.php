@@ -1,7 +1,5 @@
 <?php
-// config/conexao2.php - Configuração do banco de dados
-
-$host = '189.45.123.67';
+$host = '127.0.0.1';
 $dbname = 'stackoverflow_fatec';
 $username = 'root';
 $password = '';
